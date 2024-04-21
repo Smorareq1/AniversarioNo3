@@ -706,6 +706,7 @@ body.dark-theme {
 @media screen and (max-width: 340px) {
   .recently .card__container {
     margin-inline: 1rem; /* Ajustar margen para dispositivos pequeños */
+    grid-template-columns: repeat(1, 328px);
   }
 }
 
