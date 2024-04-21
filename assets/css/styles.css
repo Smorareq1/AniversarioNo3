@@ -468,7 +468,7 @@ body.dark-theme {
 
 .popular .card__title{
   color: white;
-  font-size: var(--biggest-font-size);
+  font-size: var(--h1-font-size);
   line-height: 100%;
   margin-bottom: 1rem;
 }
@@ -629,7 +629,7 @@ body.dark-theme {
 /* For large devices */
 @media screen and (min-width: 1100px){
   .popular .card{
-    height: 40vh;
+    height: 60vh;
   }
   .popular .card__container {
     grid-template-columns: repeat(3, 328px);
