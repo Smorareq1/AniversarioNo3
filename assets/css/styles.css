@@ -703,10 +703,9 @@ body.dark-theme {
 /* Media queries */
 
 /* Para dispositivos pequeños */
-@media screen and (max-width: 340px) {
+@media screen and (min-width: 340px) {
   .recently .card__container {
-    margin-inline: 1rem; /* Ajustar margen para dispositivos pequeños */
-    grid-template-columns: repeat(1, 328px);
+    grid-template-columns: 328px; /* Cambiar a una sola columna */
   }
 }
 
