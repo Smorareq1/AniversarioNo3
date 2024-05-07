@@ -1,0 +1,132 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    /*========== Colors ==========*/
+    --first-color: hsl(30, 16%, 50%);
+    --text-color: #fff;
+    --text-color-black: hsl(30, 8%, 15%);
+    --body-color: hsl(30, 100%, 98%);
+
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --h3-font-size: 1rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+}
+
+/* Responsive typography */
+@media screen and (min-width: 1024px) {
+    :root {
+        --h3-font-size: 1.125rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*=============== BASE ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== THEME ===============*/
+.nav__buttons {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+}
+
+.change-theme{
+    font-size: 1.25rem;
+    color: var(--title-color);
+    cursor: pointer;
+    transition: color .3s;
+}
+
+/*========== Variables Dark theme ==========*/
+body.dark-theme {
+    --first-color: hsl(184, 55%, 58%);
+    --first-color-alt: hsl(184, 60%, 54%);
+    --title-color: hsl(19, 24%, 85%);
+    --text-color: hsl(19, 16%, 65%);
+    --body-color: hsl(19, 12%, 8%);
+    --container-color: hsl(19, 10%, 10%);
+}
+/*==========
+    Color changes in some parts of
+    the website, in light theme
+==========*/
+.dark-theme .bg-header,
+.dark-theme .nav__menu,
+.dark-theme .scrollup {
+    box-shadow: 0 2px 8px hsla(19, 64%, 4%, .5);
+}
+
+.dark-theme .carta{
+    box-shadow: 0 8px 20px hsla(19, 64%, 4%, .2);
+}
+
+.dark-theme::-webkit-scrollbar {
+    background-color: hsl(19, 8% , 15%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb {
+    background-color: hsl(19, 8% , 25%);
+}
+
+.dark-theme::-webkit-scrollbar-thumb:hover {
+    background-color: hsl(19, 8% , 35%);
+}
+
+
+
+
+/*=============== CARTA ===============*/
+/* Estilos para la clase "carta" */
+.carta {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--body-color);
+    text-align: justify; /* Alineación justificada del texto */
+}
+
+.carta h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el texto */
+    margin-top: 20px;
+}
+
+.carta p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--title-color);
+    font-family: var(--body-font);
+    text-align: justify; /* Alineación justificada del texto */
+}
+
+.carta img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Para eliminar cualquier espacio adicional */
+    margin-left: auto; /* Centra la imagen horizontalmente */
+    margin-right: auto; /* Centra la imagen horizontalmente */
+}
+
+

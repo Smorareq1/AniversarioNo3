@@ -4,21 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--=============== FAVICON ===============-->
-    <link rel="shortcut icon" href="assets/img/favicon.png" type="image/x-icon">
-
     <!--=============== REMIXICONS ===============-->
-    <link
-            href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
-            rel="stylesheet"
-    />
-    <!--=============== CSS ===============-->
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/galery.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
 
-    <title>Pagina de Aniversario - Sebas</title>
+    <!--=============== SWIPER CSS ===============-->
+    <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/galery.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+
+    <title>Galeria de Imagenes - Sebas</title>
 </head>
 <body>
+
 <!--==================== HEADER ====================-->
 <header class="header" id="header">
     <nav class="nav container">
@@ -28,7 +29,6 @@
         </a>
 
         <div class="nav__menu" id="nav-menu">
-
             <!-- Close button-->
             <div class="nav__close" id="nav-close">
                 <i class="ri-close-line"></i>
@@ -41,131 +41,118 @@
         <div class="nav__buttons">
             <!-- Theme change button-->
             <i class="ri-moon-line change-theme" id="theme-button"></i>
+            <!-- Toggle button-->
+            <div class="nav__toggle" id="nav-toggle">
+                <i class="ri-apps-2-line"></i>
+            </div>
         </div>
     </nav>
 </header>
+<!--==================== Galeria ====================-->
+<div class="gallery">
+    <!-- =============== SWIPER GALLERY CARDS =============== -->
+    <div class="swiper gallery-cards">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <article class="gallery__card">
+                    <img src="assets/galery/galery1.jpg" alt="image gallery" class="gallery__img">
+                    <div class="gallery__data">
+                    </div>
+                </article>
+            </div>
 
-<!--==================== MAIN ====================-->
-<main class="main">
-    <!--==================== HOME ====================-->
-    <section class="home section" id="home">
-        <div class="gallery">
-            <div class="gallery-cards">
-                <div>
-                    <div>
+            <div class="swiper-slide">
+                <article class="gallery__card">
+                    <img src="assets/galery/gallery9.jpg" alt="image gallery" class="gallery__img">
+                    <div class="gallery__data">
 
-                        <article class="gallery__card">
-                            <img src="assets/img/homeImage.png" alt="image gallery" class="gallery">
-                            <div class="gallery__data">
-                                <h3 class="gallery__title">Titulo 1</h3>
-                                <span class="gallery__subtitle">Descripcion</span>
-                            </div>
-                        </article>
+                    </div>
+                </article>
+            </div>
 
-                        <article class="gallery__card">
-                            <img src="assets/galery/----" alt="image gallery" class="gallery">
-                            <div class="gallery__data">
-                                <h3 class="gallery__title">Titulo 2</h3>
-                                <span class="gallery__subtitle">Descripcion</span>
-                            </div>
-                        </article>
+            <div class="swiper-slide">
+                <article class="gallery__card">
+                    <img src="assets/galery/gallery6.jpg" alt="image gallery" class="gallery__img">
+                    <div class="gallery__data">
 
-                        <article class="gallery__card">
-                            <img src="assets/galery/----" alt="image gallery" class="gallery">
-                            <div class="gallery__data">
-                                <h3 class="gallery__title">Titulo 3</h3>
-                                <span class="gallery__subtitle">Descripcion</span>
-                            </div>
-                        </article>
+                    </div>
+                </article>
+            </div>
 
-                        <article class="gallery__card">
-                            <img src="assets/galery/----" alt="image gallery" class="gallery">
-                            <div class="gallery__data">
-                                <h3 class="gallery__title">Titulo 4</h3>
-                                <span class="gallery__subtitle">Descripcion</span>
-                            </div>
-                        </article>
+            <div class="swiper-slide">
+                <article class="gallery__card">
+                    <img src="assets/galery/gallery7.jpg" alt="image gallery" class="gallery__img">
+                    <div class="gallery__data">
 
+                    </div>
+                </article>
+            </div>
+
+            <div class="swiper-slide">
+                <article class="gallery__card">
+                    <img src="assets/galery/gallery8.jpg" alt="image gallery" class="gallery__img">
+                    <div class="gallery__data">
+
+                    </div>
+                </article>
+            </div>
+        </div>
+    </div>
+
+    <!-- =============== SWIPER GALLERY THUMBNAIL =============== -->
+    <div class="gallery__overflow">
+        <div class="swiper gallery-thumbs">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="gallery__thumbnail">
+                        <img src="assets/galery/galery1.jpg" alt="image thumbnail" class="gallery__thumbnail-img">
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="gallery__thumbnail">
+                        <img src="assets/galery/gallery9.jpg" alt="image thumbnail" class="gallery__thumbnail-img">
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="gallery__thumbnail">
+                        <img src="assets/galery/gallery6.jpg" alt="image thumbnail" class="gallery__thumbnail-img">
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="gallery__thumbnail">
+                        <img src="assets/galery/gallery7.jpg" alt="image thumbnail" class="gallery__thumbnail-img">
+                    </div>
+                </div>
+
+                <div class="swiper-slide">
+                    <div class="gallery__thumbnail">
+                        <img src="assets/galery/gallery8.jpg" alt="image thumbnail" class="gallery__thumbnail-img">
                     </div>
                 </div>
             </div>
 
-            <!-- SWIPER GALLERY THUMBNAILS-->
-            <div class="gallery__overflow">
-                <div class="gallery__thumbs">
-                    <div>
-
-                        <div>
-                            <div class="gallery__thumbnail">
-                                <img src="assets/img/homeImage.png" alt="image thumbnail" class="gallery__thumbnail-img">
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="gallery__thumbnail">
-                                <img src="" alt="image thumbnail" class="gallery__thumbnail-img">
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="gallery__thumbnail">
-                                <img src="" alt="image thumbnail" class="gallery__thumbnail-img">
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="gallery__thumbnail">
-                                <img src="" alt="image thumbnail" class="gallery__thumbnail-img">
-                            </div>
-                        </div>
-
-                        <div>
-                            <div class="gallery__thumbnail">
-                                <img src="" alt="image thumbnail" class="gallery__thumbnail-img">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-</main>
-
-<!--==================== FOOTER ====================-->
-<footer class="footer">
-    <div class="footer__container container grid">
-        <div>
-            <a href="" class="footer__logo">
-                <img src="assets/img/LogoImg.png" alt="logo image">
-                Museo de la Memoria
-            </a>
-
-            <p class="footer__description">
-                El mejor museo donde los recuerdos nunca se perderan <br> y los
-                podras llevar con tigo a donde sea.
-            </p>
+            <!-- Swiper pagination -->
+            <div class="swiper-pagination"></div>
         </div>
 
+        <!-- Swiper arrows -->
+        <div class="swiper-button-next">
+            <i class="ri-arrow-right-line"></i>
+        </div>
+        <div class="swiper-button-prev">
+            <i class="ri-arrow-left-line"></i>
+        </div>
     </div>
+</div>
 
-    <div class="footer__info container">
-                <span class="footer__copy">
-                    &copy; 2024 Sebas. Todos los derechos reservados.
-                </span>
-    </div>
-</footer>
-
-<!--========== SCROLL UP ==========-->
-<a href="#" class="scrollup" id="scroll-up">
-    <i class="ri-arrow-up-line"></i>
-</a>
-
-<!--=============== SCROLLREVEAL ===============-->
-<script src="assets/js/scrollreveal.min.js"></script>
-<script src="assets/js/galery.js"></script>
+<!--=============== SWIPER JS ===============-->
+<script src="assets/js/swiper-bundle.min.js"></script>
 
 <!--=============== MAIN JS ===============-->
+<script src="assets/js/galery.js"></script>
 <script src="assets/js/main.js"></script>
 </body>
 </html>

@@ -1,52 +1,25 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Lora:wght@500;600&family=Poppins:wght@400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap");
 
 /*=============== VARIABLES CSS ===============*/
 :root {
-    --header-height: 3.5rem;
-
     /*========== Colors ==========*/
-    /*Color mode HSL(hue, saturation, lightness)*/
-    --first-color: hsl(184, 55%, 38%);
-    --first-color-alt: hsl(184, 60%, 47%);
-    --title-color: hsl(19, 16%, 15%);
-    --text-color: hsl(19, 16%, 35%);
-    --text-color-light: hsl(19, 8%, 55%);
-    --body-color: hsl(19, 100%, 96%);
-    --container-color: hsl(19, 100%, 97%);
-
-    /*CARDS*/
-    --body-gradient: linear-gradient(90deg, hsl(184, 100%, 84%), hsl(184, 100%, 80%));
-    --shape-gradient: linear-gradient(90deg, hsl(184, 76%, 60%), hsl(184, 81%, 60%));
+    --first-color: hsl(30, 16%, 50%);
+    --text-color: #fff;
+    --text-color-black: hsl(30, 8%, 15%);
+    --body-color: hsl(30, 100%, 98%);
 
     /*========== Font and typography ==========*/
-    /*.5rem = 8px | 1rem = 16px ...*/
-    --body-font: "Poppins", sans-serif;
-    --title-font: "Lora", serif;
-    --subtitle-font: "Dancing Script", cursive;
-    --biggest-font-size: 2.25rem;
-    --h1-font-size: 1.5rem;
-    --h2-font-size: 1.25rem;
+    --body-font: 'Poppins', sans-serif;
     --h3-font-size: 1rem;
-    --normal-font-size: .938rem;
     --small-font-size: .813rem;
     --smaller-font-size: .75rem;
-
-    /*========== Font weight ==========*/
-    --font-medium: 500;
-    --font-semi-bold: 600;
-
-    /*========== z index ==========*/
-    --z-tooltip: 10;
-    --z-fixed: 100;
 }
+
+/* Responsive typography */
 @media screen and (min-width: 1024px) {
     :root {
-        --biggest-font-size: 4rem;
-        --h1-font-size: 2.25rem;
-        --h2-font-size: 1.5rem;
-        --h3-font-size: 1.25rem;
-        --normal-font-size: 1rem;
+        --h3-font-size: 1.125rem;
         --small-font-size: .875rem;
         --smaller-font-size: .813rem;
     }
@@ -59,10 +32,6 @@
     margin: 0;
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
 body {
     font-family: var(--body-font);
     background-color: var(--body-color);
@@ -73,14 +42,136 @@ img {
     height: auto;
 }
 
-/*=============== GALLERY ===============*/
 
-.gallery{
-    height: 100vh;
-    display: grid;
+/*=============== HEADER & NAV ===============*/
+.header{
+    position: fixed;
+    width: 100%;
+    background-color: var(--body-color);
+    top: 0;
+    left: 0;
+    z-index: var(--z-fixed);
+    transition: box-shadow 0.3s, background 0.4s;
 }
 
-.gallery__card{
+.nav{
+    position: relative;
+    height: var(--header-height);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo,
+.nav__toggle,
+.nav__close{
+    display: flex;
+    color: var(--title-color);
+}
+
+.nav__logo{
+    align-items: center;
+    column-gap: .5rem;
+    font-family: var(--title-font);
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.3s;
+}
+
+.nav__logo img{
+    width: 25px;
+}
+.nav__logo:hover{
+    color: var(--first-color);
+}
+
+.nav__toggle{
+    font-size: 1.25rem;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 767px){
+    .nav__menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        background-color: var(--body-color);
+        width: 100%;
+        box-shadow: 0 8px 20px hsla(19, 64%, 24%, .1);
+        padding-block: 3.5rem;
+        transition: top .4s;
+    }
+}
+
+.nav__list{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    row-gap: 2rem;
+}
+
+.nav__link{
+    color: var(--text-color);
+    font-weight: var(--font-medium);
+    transition: color 0.4s;
+}
+
+.nav__link:hover{
+    color: var(--first-color);
+}
+
+.nav__close{
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.nav__img1,
+.nav__img2{
+    position: absolute;
+    opacity: .2;
+}
+
+.nav__img1{
+    width: 100px;
+    top: .75rem;
+    left: -2rem;
+    transform: rotate(165deg);
+}
+
+.nav__img2{
+    width: 50px;
+    right: -1rem;
+    bottom: 0;
+    transform: rotate(-30deg);
+}
+
+
+/* Show menu */
+.show-menu{
+    top: 0;
+}
+
+/* Change background header */
+.bg-header{
+    box-shadow: 0 2px 8px hsla(19, 64%, 24%, .1);
+}
+
+/* Active link */
+.active-link{
+    color: var(--first-color);
+}
+
+.gallery {
+    height: 100vh;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+}
+
+.gallery__card {
     position: relative;
     width: 208px;
     height: 268px;
@@ -90,4 +181,173 @@ img {
     overflow: hidden;
 }
 
-.gallery__img
+.gallery__img,
+.gallery__card::after,
+.gallery__data {
+    position: absolute;
+}
+
+.gallery__img {
+    inset: 0;
+    margin: auto;
+    transition: transform .3s;
+}
+
+.gallery__card::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg,
+    hsla(0, 0%, 100%, 0) 32%,
+    hsla(0, 0%, 0%, .3) 100%);
+    top: 0;
+    z-index: 1;
+}
+
+.gallery__data {
+    bottom: 1.5rem;
+    left: 1.75rem;
+    z-index: 10;
+}
+
+.gallery__title,
+.gallery__subtitle {
+    color: var(--text-color);
+    font-weight: 500;
+}
+
+.gallery__title {
+    font-size: var(--h3-font-size);
+}
+
+.gallery__subtitle {
+    font-size: var(--smaller-font-size);
+}
+
+.gallery__overflow {
+    position: relative;
+}
+
+.gallery__thumbnail {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 1.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    margin-left: auto;
+    margin-right: auto;
+    transition: transform .3s;
+}
+
+.gallery__thumbnail-img {
+    position: absolute;
+    inset: 0;
+    margin: auto;
+}
+
+/* Swiper class */
+.gallery-cards,
+.gallery-thumbs {
+    width: 260px;
+}
+
+.gallery-cards:hover .gallery__img {
+    transform: scale(1.1);
+}
+
+.gallery .swiper-wrapper {
+    padding: 2.5rem 0;
+}
+
+.gallery-thumbs {
+    height: 132px;
+}
+
+/* Active thumbnail */
+.swiper-slide-active .gallery__thumbnail {
+    transform: translateY(-1.25rem) scale(1.2);
+}
+
+/* Rotate thumbnail */
+.swiper-slide-next .gallery__thumbnail {
+    transform: rotate(15deg);
+}
+
+.swiper-slide-prev .gallery__thumbnail {
+    transform: rotate(-15deg);
+}
+
+/* Sliding numbers */
+.swiper-pagination-fraction {
+    font-size: var(--small-font-size);
+    letter-spacing: -1px;
+    font-weight: 500;
+    color: var(--first-color);
+    bottom: 0;
+}
+
+/* Arrow buttons */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: '';
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    font-size: 1.5rem;
+    color: var(--text-color-black);
+    top: 5.5rem;
+}
+
+.swiper-button-next {
+    right: -1.5rem;
+    transform: rotate(15deg);
+}
+
+.swiper-button-prev {
+    left: -1.5rem;
+    transform: rotate(-15deg);
+}
+
+/* Other swiper settings */
+.gallery-cards::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.swiper-horizontal.swiper-css-mode > .swiper-wrapper {
+    scroll-snap-type: initial;
+}
+
+/*=============== BREAKPOINTS ===============*/
+/* For small devices */
+@media screen and (max-width: 320px) {
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+/* For medium devices */
+@media screen and (min-width: 1024px) {
+    .gallery__card {
+        width: 220px;
+        height: 290px;
+    }
+    .gallery__thumbnail {
+        width: 65px;
+        height: 65px;
+    }
+    .gallery-cards,
+    .gallery-thumbs {
+        width: 280px;
+    }
+}
+
+
